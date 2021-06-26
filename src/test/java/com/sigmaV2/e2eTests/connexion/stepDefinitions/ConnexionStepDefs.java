@@ -5,6 +5,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.asserts.SoftAssert;
 
 import com.sigmaV2.e2eTests.connexion.pages.ConnexionPage;
+import com.sigmaV2.e2eTests.utils.CommonMethods;
 import com.sigmaV2.e2eTests.utils.Setup;
 
 import cucumber.api.java.en.Given;
@@ -26,8 +27,8 @@ public class ConnexionStepDefs {
 	
 	@Given("^Jouvre lapplication SigmaV(\\d+)$")
 	public void jouvreLapplicationSigmaV(String url) throws Throwable {
-		driver.get("https://sigmav2-recette-mai.iga-tunisie.com/");
-		//CommonMethods.openApplication("");
+		//driver.get("https://sigmav2-recette-mai.iga-tunisie.com/");
+		CommonMethods.openApplication("url");
 		
 	}
 
