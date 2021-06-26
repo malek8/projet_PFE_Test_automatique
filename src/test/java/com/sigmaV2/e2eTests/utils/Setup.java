@@ -4,23 +4,25 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
+
+
+
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 
-
 public class Setup {
-	
 	public static WebDriver driver;
 	static DriverManager driverManager;
 
 	@Before
 	/**
-	 * Call browser with the design pattern factory navigator
+	 * Call browser with the design pattern Factory Navigator
 	 */
 	public static void setup() {
 		driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
 		driver = driverManager.getDriver();
+		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 	@After
@@ -37,10 +39,8 @@ public class Setup {
 				System.err.println(somePlatformDontSupportScreenshots.getMessage());
 			}
 		}
+
 		//driver.quit();
 	}
-	
-	
-	
 
 }

@@ -39,11 +39,11 @@ public class CommonMethods {
 
 	protected static final Logger logger = LoggerFactory.getLogger(AbstractPage.class);
 
-	public static void openApplication() throws IOException {
+	public static void openApplication(String url ) throws IOException {
 		prop = new Properties();
 		FileInputStream fis = new FileInputStream("src/test/resources/configs/config.properties");
 		prop.load(fis);
-		driver.get(prop.getProperty("url"));
+		driver.get(prop.getProperty(url));
 
 	}
 
